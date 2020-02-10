@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function App() {
   const [repositories, setRepositories] = useState([]);
+  const [location, setLocation] = useState({});
 
   useEffect(() => {
     async function getRepos() {
@@ -27,9 +28,23 @@ export default function App() {
     setRepositories(newRepositories);
   }
 
+  useEffect(() => {
+    const watchId = navigator.geolocation.watchPosition(handlePositionReceived);
+
+    return () => { navigator.geolocation.clearWatch(watchId) }
+  }, [])
+
+  function handlePositionReceived({ coords }) {
+    const { latitude, longitude } = coords;
+
+    setLocation({ latitude, longitude })
+  }
+
   return (
     <>
       <ul>
+        Latitude: {location.latitude}  <br />
+        Longitude: {location.longitude}
         { repositories.map(repo => (
           <li key={repo.id}>
             {repo.name}
