@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App]https://github.com/facebook/create-react-app) and based on a [RocketSeat video about React Hooks](https://youtu.be/6WB16wZS61c?list=PL85ITvJ7FLoiuaKgHFYgrhZDwXOUEaxWI). 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and based on a [RocketSeat video about React Hooks](https://youtu.be/6WB16wZS61c?list=PL85ITvJ7FLoiuaKgHFYgrhZDwXOUEaxWI). 
 
 ## Available Scripts
 
